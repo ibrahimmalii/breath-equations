@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="card-header bg-primary text-light">
+    <div class="card-header bg-secondary text-light">
       <h3>CONSERVATIVE THERAPY</h3>
     </div>
 

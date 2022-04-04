@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="card-header bg-primary text-light">
+    <div class="card-header bg-secondary text-light">
       <h3>VENTILATION PARAMETERS</h3>
     </div>
 
@@ -586,13 +586,13 @@ export default {
   computed: {
     measureMaleEauation() {
       if (this.heightMale) {
-        return (this.heightMale - 60) * 6 + 106;
+        return 50 + 0.9 * (this.heightMale - 152);
       }
       return 0;
     },
     measurefemaleEauation() {
       if (this.heightFemale) {
-        return (this.heightFemale - 60) * 5 + 105;
+        return 45.5 + 0.9 * (this.heightFemale - 152);
       }
       return 0;
     },

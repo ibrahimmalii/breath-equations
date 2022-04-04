@@ -21,6 +21,11 @@ import IdealBody from './components/pages/IdealBody.vue';
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <router-link tag="a" class="nav-link" aria-current="page" to="/"
+              ><b>About US</b></router-link
+            >
+          </li>
           <li class="nav-item dropdown">
             <a
               class="nav-link fw-bold"
@@ -63,11 +68,6 @@ import IdealBody from './components/pages/IdealBody.vue';
                 >
               </li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <router-link tag="a" class="nav-link" aria-current="page" to="/"
-              >About US</router-link
-            >
           </li>
         </ul>
       </div>
