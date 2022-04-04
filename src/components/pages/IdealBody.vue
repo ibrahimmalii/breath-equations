@@ -3,273 +3,516 @@
     <div class="card-header bg-primary text-light">
       <h3>VENTILATION PARAMETERS</h3>
     </div>
-    <div class="card-body">
-      <div>
-        <h4 class="text-success">Ideal body weight</h4>
-        <input
-          class="form-control"
-          type="number"
-          v-model="heightMale"
-          placeholder="Height inches for males"
-        />
-        <span> The Result: {{ measureMaleEauation }}</span> <br />
 
-        <input
-          class="form-control mt-3"
-          type="number"
-          v-model="heightFemale"
-          placeholder="Height inches for females"
-        />
-        <span> The Result: {{ measurefemaleEauation }}</span>
-      </div>
-      <div class="mt-4">
-        <h4 class="text-success">Airway Resistance (R<sub>aw</sub>)</h4>
-        <div class="airway d-flex">
-          <input
-            v-model="airwayResistance.peakPressure"
-            type="number"
-            placeholder="Peak Pressure"
-            class="form-control e-1"
-          />
-          <input
-            v-model="airwayResistance.plateauPressure"
-            placeholder="Plateau Pressure "
-            type="number"
-            class="form-control mx-1"
-          /><input
-            v-model="airwayResistance.flowrate"
-            type="number"
-            placeholder="Flowrate ni L/min"
-            class="form-control ms-1"
-          />
+    <div class="card-body">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              Ideal body weight
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <div>
+                <input
+                  class="form-control"
+                  type="number"
+                  v-model="heightMale"
+                  placeholder="Height inches for males"
+                />
+                <span> The Result: {{ measureMaleEauation }}</span> <br />
+
+                <input
+                  class="form-control mt-3"
+                  type="number"
+                  v-model="heightFemale"
+                  placeholder="Height inches for females"
+                />
+                <span> The Result: {{ measurefemaleEauation }}</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <span> The Result: {{ measureAirWayResistance }}</span> <br />
-      </div>
-      <div class="mt-4">
-        <h4 class="text-success">Static Compliance</h4>
-        <div class="airway d-flex">
-          <input
-            v-model="staticCompliance.tidalVolume"
-            type="number"
-            placeholder="Tidal Volume"
-            class="form-control me-1"
-          />
-          <input
-            v-model="staticCompliance.plateauPressure"
-            placeholder="Plateau Pressure"
-            type="number"
-            class="form-control mx-1"
-          /><input
-            v-model="staticCompliance.totalPeep"
-            type="number"
-            placeholder="Total Peep"
-            class="form-control ms-1"
-          />
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              Airway Resistance (R<sub>aw</sub>)
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <div>
+                <div class="airway d-flex">
+                  <input
+                    v-model="airwayResistance.peakPressure"
+                    type="number"
+                    placeholder="Peak Pressure"
+                    class="form-control e-1"
+                  />
+                  <input
+                    v-model="airwayResistance.plateauPressure"
+                    placeholder="Plateau Pressure "
+                    type="number"
+                    class="form-control mx-1"
+                  /><input
+                    v-model="airwayResistance.flowrate"
+                    type="number"
+                    placeholder="Flowrate ni L/min"
+                    class="form-control ms-1"
+                  />
+                </div>
+                <span> The Result: {{ measureAirWayResistance }}</span> <br />
+              </div>
+            </div>
+          </div>
         </div>
-        <span> The Result: {{ measureStaticCompliance }}</span> <br />
-      </div>
-      <div class="mt-4">
-        <h4 class="text-success">Dynamic Compliance</h4>
-        <div class="airway d-flex">
-          <input
-            v-model="dynamicCompliance.tidalVolume"
-            type="number"
-            placeholder="Tidal Volume"
-            class="form-control me-1"
-          />
-          <input
-            v-model="dynamicCompliance.peakPressure"
-            placeholder="Peak Pressure"
-            type="number"
-            class="form-control mx-1"
-          /><input
-            v-model="dynamicCompliance.totalPeep"
-            type="number"
-            placeholder="Total Peep"
-            class="form-control ms-1"
-          />
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              Static Compliance
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <div>
+                <div class="airway d-flex">
+                  <input
+                    v-model="staticCompliance.tidalVolume"
+                    type="number"
+                    placeholder="Tidal Volume"
+                    class="form-control me-1"
+                  />
+                  <input
+                    v-model="staticCompliance.plateauPressure"
+                    placeholder="Plateau Pressure"
+                    type="number"
+                    class="form-control mx-1"
+                  /><input
+                    v-model="staticCompliance.totalPeep"
+                    type="number"
+                    placeholder="Total Peep"
+                    class="form-control ms-1"
+                  />
+                </div>
+                <span> The Result: {{ measureStaticCompliance }}</span> <br />
+              </div>
+            </div>
+          </div>
         </div>
-        <span> The Result: {{ measureDynamicCompliance }}</span> <br />
-      </div>
-      <div class="mt-4">
-        <h4 class="text-success">Total Cycle time (TCT)</h4>
-        <div class="d-flex">
-          <input
-            v-model="totalCycleTime.frequency"
-            type="number"
-            placeholder="f (frequency)"
-            class="form-control"
-          />
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFour"
+              aria-expanded="false"
+              aria-controls="collapseFour"
+            >
+              Dynamic Compliance
+            </button>
+          </h2>
+          <div
+            id="collapseFour"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingFour"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <div>
+                <div class="airway d-flex">
+                  <input
+                    v-model="dynamicCompliance.tidalVolume"
+                    type="number"
+                    placeholder="Tidal Volume"
+                    class="form-control me-1"
+                  />
+                  <input
+                    v-model="dynamicCompliance.peakPressure"
+                    placeholder="Peak Pressure"
+                    type="number"
+                    class="form-control mx-1"
+                  /><input
+                    v-model="dynamicCompliance.totalPeep"
+                    type="number"
+                    placeholder="Total Peep"
+                    class="form-control ms-1"
+                  />
+                </div>
+                <span> The Result: {{ measureDynamicCompliance }}</span> <br />
+              </div>
+            </div>
+          </div>
         </div>
-        <span> The Result: {{ measureTotalCycleTime }}</span> <br />
-      </div>
-      <div class="mt-4">
-        <h4 class="text-success">Inspiratory Time (T<sub>l</sub>)</h4>
-        <div class="d-flex">
-          <input
-            v-model="inspiratoryTime.tct"
-            type="number"
-            placeholder="Total Cycle time (TCT)"
-            class="form-control"
-          />
-          <input
-            v-model="inspiratoryTime.sumOfIE"
-            type="number"
-            placeholder="Sum of I:E ratio"
-            class="form-control ms-2"
-          />
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFive">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFive"
+              aria-expanded="false"
+              aria-controls="collapseFive"
+            >
+              Total Cycle time (TCT)
+            </button>
+          </h2>
+          <div
+            id="collapseFive"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingFive"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <div>
+                <div class="d-flex">
+                  <input
+                    v-model="totalCycleTime.frequency"
+                    type="number"
+                    placeholder="f (frequency)"
+                    class="form-control"
+                  />
+                </div>
+                <span> The Result: {{ measureTotalCycleTime }}</span> <br />
+              </div>
+            </div>
+          </div>
         </div>
-        <span> The Result: {{ measureInspiratoryTime }}</span> <br />
-      </div>
-      <div class="mt-4">
-        <h4 class="text-success">Expiratory Time (T<sub>E</sub>)</h4>
-        <div class="d-flex">
-          <input
-            v-model="expiratoryTime.tct"
-            type="number"
-            placeholder="Total Cycle time (TCT)"
-            class="form-control"
-          />
-          <input
-            v-model="expiratoryTime.insertTI"
-            type="number"
-            placeholder="insert TI "
-            class="form-control ms-2"
-          />
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingSix">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseSix"
+              aria-expanded="false"
+              aria-controls="collapseSix"
+            >
+              Inspiratory Time (T<sub>l</sub>)
+            </button>
+          </h2>
+          <div
+            id="collapseSix"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingSix"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <div>
+                <div class="d-flex">
+                  <input
+                    v-model="inspiratoryTime.tct"
+                    type="number"
+                    placeholder="Total Cycle time (TCT)"
+                    class="form-control"
+                  />
+                  <input
+                    v-model="inspiratoryTime.sumOfIE"
+                    type="number"
+                    placeholder="Sum of I:E ratio"
+                    class="form-control ms-2"
+                  />
+                </div>
+                <span> The Result: {{ measureInspiratoryTime }}</span> <br />
+              </div>
+            </div>
+          </div>
         </div>
-        <span> The Result: {{ measureExpiratoryTime }}</span> <br />
-      </div>
-      <div class="mt-4">
-        <h4 class="text-success">
-          Desired Change (f, V<sub>t</sub>, V<sub>E</sub>)
-        </h4>
-        <div class="airway mt-3 d-flex">
-          <input
-            v-model="desiredChange[0].rate"
-            type="number"
-            placeholder="Rate (current setting)"
-            class="form-control e-1"
-          />
-          <input
-            v-model="desiredChange[0].currentValue"
-            placeholder="PaCO2 (current value)"
-            type="number"
-            class="form-control mx-1"
-          /><input
-            v-model="desiredChange[0].desiredValue"
-            type="number"
-            placeholder="PaCO2 (desired value)"
-            class="form-control ms-1"
-          />
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingSeven">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseSeven"
+              aria-expanded="false"
+              aria-controls="collapseSeven"
+            >
+              Expiratory Time (T<sub>E</sub>)
+            </button>
+          </h2>
+          <div
+            id="collapseSeven"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingSeven"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <div>
+                <div class="d-flex">
+                  <input
+                    v-model="expiratoryTime.tct"
+                    type="number"
+                    placeholder="Total Cycle time (TCT)"
+                    class="form-control"
+                  />
+                  <input
+                    v-model="expiratoryTime.insertTI"
+                    type="number"
+                    placeholder="insert TI "
+                    class="form-control ms-2"
+                  />
+                </div>
+                <span> The Result: {{ measureExpiratoryTime }}</span> <br />
+              </div>
+            </div>
+          </div>
         </div>
-        <span> The Result: {{ measureFirstDesiredChange }}</span> <br />
-        <div class="airway mt-3 d-flex">
-          <input
-            v-model="desiredChange[1].currentSetting"
-            type="number"
-            placeholder="VT (current setting)"
-            class="form-control e-1"
-          />
-          <input
-            v-model="desiredChange[1].currentLevel"
-            placeholder="PaCO2 (current level)"
-            type="number"
-            class="form-control mx-1"
-          /><input
-            v-model="desiredChange[1].currentValue"
-            type="number"
-            placeholder="PaCO2 (desired value)"
-            class="form-control ms-1"
-          />
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingEight">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseEight"
+              aria-expanded="false"
+              aria-controls="collapseEight"
+            >
+              Desired Change (f, V<sub>t</sub>, V<sub>E</sub>)
+            </button>
+          </h2>
+          <div
+            id="collapseEight"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingEight"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <div>
+                <div class="airway mt-3 d-flex">
+                  <input
+                    v-model="desiredChange[0].rate"
+                    type="number"
+                    placeholder="Rate (current setting)"
+                    class="form-control e-1"
+                  />
+                  <input
+                    v-model="desiredChange[0].currentValue"
+                    placeholder="PaCO2 (current value)"
+                    type="number"
+                    class="form-control mx-1"
+                  /><input
+                    v-model="desiredChange[0].desiredValue"
+                    type="number"
+                    placeholder="PaCO2 (desired value)"
+                    class="form-control ms-1"
+                  />
+                </div>
+                <span> The Result: {{ measureFirstDesiredChange }}</span> <br />
+                <div class="airway mt-3 d-flex">
+                  <input
+                    v-model="desiredChange[1].currentSetting"
+                    type="number"
+                    placeholder="VT (current setting)"
+                    class="form-control e-1"
+                  />
+                  <input
+                    v-model="desiredChange[1].currentLevel"
+                    placeholder="PaCO2 (current level)"
+                    type="number"
+                    class="form-control mx-1"
+                  /><input
+                    v-model="desiredChange[1].currentValue"
+                    type="number"
+                    placeholder="PaCO2 (desired value)"
+                    class="form-control ms-1"
+                  />
+                </div>
+                <span class="mb-2">
+                  The Result: {{ measureSecondDesiredChange }}</span
+                >
+                <br />
+                <div class="airway mt-3 d-flex">
+                  <input
+                    v-model="desiredChange[2].currentLevelVE"
+                    type="number"
+                    placeholder="VE (current level)"
+                    class="form-control e-1"
+                  />
+                  <input
+                    v-model="desiredChange[2].currentLevelPA"
+                    placeholder="PaCO2 (current level)"
+                    type="number"
+                    class="form-control mx-1"
+                  /><input
+                    v-model="desiredChange[2].desiredValue"
+                    type="number"
+                    placeholder="PaCO2 (desired value)"
+                    class="form-control ms-1"
+                  />
+                </div>
+                <span> The Result: {{ measureThirdDesiredChange }}</span> <br />
+              </div>
+            </div>
+          </div>
         </div>
-        <span class="mb-2"> The Result: {{ measureSecondDesiredChange }}</span>
-        <br />
-        <div class="airway mt-3 d-flex">
-          <input
-            v-model="desiredChange[2].currentLevelVE"
-            type="number"
-            placeholder="VE (current level)"
-            class="form-control e-1"
-          />
-          <input
-            v-model="desiredChange[2].currentLevelPA"
-            placeholder="PaCO2 (current level)"
-            type="number"
-            class="form-control mx-1"
-          /><input
-            v-model="desiredChange[2].desiredValue"
-            type="number"
-            placeholder="PaCO2 (desired value)"
-            class="form-control ms-1"
-          />
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingNine">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseNine"
+              aria-expanded="false"
+              aria-controls="collapseNine"
+            >
+              Desired FiO<sub>2</sub> level
+            </button>
+          </h2>
+          <div
+            id="collapseNine"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingNine"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <div>
+                <div class="airway d-flex">
+                  <input
+                    v-model="desiredFILevel.desiredValue"
+                    type="number"
+                    placeholder="PaO2 (desired value)"
+                    class="form-control me-1"
+                  />
+                  <input
+                    v-model="desiredFILevel.currentValueFi"
+                    placeholder="FiO2 (current value)"
+                    type="number"
+                    class="form-control mx-1"
+                  /><input
+                    v-model="desiredFILevel.currentValuePa"
+                    type="number"
+                    placeholder="PaO2 (current value)"
+                    class="form-control ms-1"
+                  />
+                </div>
+                <span> The Result: {{ measureDesiredFiLevel }}</span> <br />
+              </div>
+            </div>
+          </div>
         </div>
-        <span> The Result: {{ measureThirdDesiredChange }}</span> <br />
-      </div>
-      <div class="mt-4">
-        <h4 class="text-success">Desired FiO<sub>2</sub> level</h4>
-        <div class="airway d-flex">
-          <input
-            v-model="desiredFILevel.desiredValue"
-            type="number"
-            placeholder="PaO2 (desired value)"
-            class="form-control me-1"
-          />
-          <input
-            v-model="desiredFILevel.currentValueFi"
-            placeholder="FiO2 (current value)"
-            type="number"
-            class="form-control mx-1"
-          /><input
-            v-model="desiredFILevel.currentValuePa"
-            type="number"
-            placeholder="PaO2 (current value)"
-            class="form-control ms-1"
-          />
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTen">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTen"
+              aria-expanded="false"
+              aria-controls="collapseTen"
+            >
+              Rapid/Shallow Breathing Index (f/V<sub>t</sub>)
+            </button>
+          </h2>
+          <div
+            id="collapseTen"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTen"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <div>
+                <div class="d-flex">
+                  <input
+                    v-model="rapidAndShallow.frequency"
+                    type="number"
+                    placeholder="f (frequency)"
+                    class="form-control"
+                  />
+                  <input
+                    v-model="rapidAndShallow.liters"
+                    type="number"
+                    placeholder="Vt (liters)"
+                    class="form-control ms-2"
+                  />
+                </div>
+                <span> The Result: {{ measureRapidAndShallow }}</span> <br />
+              </div>
+            </div>
+          </div>
         </div>
-        <span> The Result: {{ measureDesiredFiLevel }}</span> <br />
-      </div>
-      <div class="mt-4">
-        <h4 class="text-success">
-          Rapid/Shallow Breathing Index (f/V<sub>t</sub>)
-        </h4>
-        <div class="d-flex">
-          <input
-            v-model="rapidAndShallow.frequency"
-            type="number"
-            placeholder="f (frequency)"
-            class="form-control"
-          />
-          <input
-            v-model="rapidAndShallow.liters"
-            type="number"
-            placeholder="Vt (liters)"
-            class="form-control ms-2"
-          />
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingEleven">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseEleven"
+              aria-expanded="false"
+              aria-controls="collapseEleven"
+            >
+              ROX index
+            </button>
+          </h2>
+          <div
+            id="collapseEleven"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingEleven"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <div>
+                <div class="airway d-flex">
+                  <input
+                    type="number"
+                    v-model="roxIndex.spo2"
+                    placeholder="SPO2"
+                    class="form-control me-1"
+                  />
+                  <input
+                    v-model="roxIndex.fio2"
+                    placeholder="FIO2"
+                    type="number"
+                    class="form-control mx-1"
+                  /><input
+                    v-model="roxIndex.rate"
+                    type="number"
+                    placeholder="Respiratory Rate"
+                    class="form-control ms-1"
+                  />
+                </div>
+                <span> The Result: {{ measureRoxIndex }}</span> <br />
+              </div>
+            </div>
+          </div>
         </div>
-        <span> The Result: {{ measureRapidAndShallow }}</span> <br />
-      </div>
-      <div class="mt-4">
-        <h4 class="text-success">ROX index</h4>
-        <div class="airway d-flex">
-          <input
-            type="number"
-            v-model="roxIndex.spo2"
-            placeholder="SPO2"
-            class="form-control me-1"
-          />
-          <input
-            v-model="roxIndex.fio2"
-            placeholder="FIO2"
-            type="number"
-            class="form-control mx-1"
-          /><input
-            v-model="roxIndex.rate"
-            type="number"
-            placeholder="Respiratory Rate"
-            class="form-control ms-1"
-          />
-        </div>
-        <span> The Result: {{ measureRoxIndex }}</span> <br />
       </div>
     </div>
   </div>
