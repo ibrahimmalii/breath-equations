@@ -2,7 +2,7 @@
   <div class="w-50 p-5 contact">
     <h2 style="margin-left: -15px; margin-bottom: 40px">Contact Information</h2>
 
-    <h1>Breath Equation Contact & Support</h1>
+    <h1>Breath Equation</h1>
 
     <h3>Contact & Support</h3>
 
