@@ -7,7 +7,7 @@ import IdealBody from './components/pages/IdealBody.vue';
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <div class="logo me-3"></div>
+      <!-- <div class="logo me-3"></div> -->
       <button
         class="navbar-toggler"
         type="button"
@@ -23,7 +23,7 @@ import IdealBody from './components/pages/IdealBody.vue';
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <router-link tag="a" class="nav-link" aria-current="page" to="/"
-              ><b>About US</b></router-link
+              ><b>About Us</b></router-link
             >
           </li>
           <li class="nav-item dropdown">
@@ -68,6 +68,15 @@ import IdealBody from './components/pages/IdealBody.vue';
                 >
               </li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <router-link
+              tag="a"
+              class="nav-link"
+              aria-current="page"
+              to="/support"
+              ><b>Contact Us</b></router-link
+            >
           </li>
         </ul>
       </div>

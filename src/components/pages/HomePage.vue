@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <h2 class="text-primary mb-2">Breath</h2>
+    <h2 class="text-primary mb-2">Breath Equations</h2>
     <p class="h6 lh-lg">
       We are forth year respiratory therapy students at King Saud bin Abdulaziz
       University for Health sciences in Jeddah. We created this website to
