@@ -1,8 +1,8 @@
 const express = require('express');
-const serveStatic = require("serve-static")
 const path = require('path');
-app = express();
-console.log(path.join(__dirname, 'dist'))
-app.use(serveStatic(path.join(__dirname, 'dist')));
-const port = process.env.PORT || 8000;
-app.listen(port);
+const app = express();
+app.use(express.static(__dirname + '/dist'));
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname + '/dist/index.html'));
+});
+app.listen(process.env.PORT || 8080);
