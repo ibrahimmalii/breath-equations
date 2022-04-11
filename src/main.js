@@ -3,7 +3,7 @@ import App from './App.vue';
 import { createWebHistory, createRouter } from 'vue-router';
 import IdealBody from './components/pages/IdealBody.vue';
 import HomePage from './components/pages/HomePage.vue';
-import oxygenation from './components/pages/oxygenation.vue';
+import oxygenation from './components/pages/Oxygenation.vue';
 import conservate from './components/pages/Conservate.vue';
 import support from './components/pages/Support.vue';
 import 'bootstrap/dist/css/bootstrap.min.css';
