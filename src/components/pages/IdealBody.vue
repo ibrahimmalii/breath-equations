@@ -31,7 +31,7 @@
                   class="form-control"
                   type="number"
                   v-model="heightMale"
-                  placeholder="Height inches for males"
+                  placeholder="Height cm for males"
                 />
                 <span> The Result: {{ measureMaleEauation }}</span> <br />
 
@@ -39,7 +39,7 @@
                   class="form-control mt-3"
                   type="number"
                   v-model="heightFemale"
-                  placeholder="Height inches for females"
+                  placeholder="Height cm for females"
                 />
                 <span> The Result: {{ measurefemaleEauation }}</span>
               </div>
