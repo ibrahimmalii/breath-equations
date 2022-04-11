@@ -1,5 +1,5 @@
 <template>
-  <div class="w-50 p-5 contact">
+  <div class="p-5 contact">
     <h2 style="margin-left: -15px; margin-bottom: 40px">Contact Information</h2>
 
     <h1>Breath Equation</h1>
